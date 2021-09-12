@@ -81,5 +81,40 @@ namespace WPF_ZooManager {
                 MessageBox.Show(e.ToString());
             }
         }
+
+        private void ShowAllAnimals() {
+            try {
+                string query = "select * from Animal";
+                SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(query, sqlConnection);
+
+                using (sqlDataAdapter) {
+                    DataTable animalTable = new DataTable();
+                    sqlDataAdapter.Fill(animalTable);
+
+                    listAllAnimals.DisplayMemberPath = "Name";
+                    listAllAnimals.SelectedValuePath = "Id";
+                    listAllAnimals.ItemsSource = animalTable.DefaultView;
+                }
+
+            } catch (Exception e) {
+                MessageBox.Show(e.ToString());
+            }
+        }
+
+        private void DeleteZoo_Click(object sender, RoutedEventArgs e) {
+            try {
+                string query = "Delete from Zoo where id = @ZooId";
+                SqlCommand sqlCommand = new SqlCommand(query, sqlConnection);
+                sqlConnection.Open();
+                sqlCommand.Parameters.AddWithValue("@ZooId", listZoos.SelectedValue);
+                sqlCommand.ExecuteScalar();
+               
+            } catch (Exception ex) {
+                MessageBox.Show(ex.ToString());
+            } finally {
+                sqlConnection.Close();
+                ShowZoos();
+            }
+        }
     }
 }
