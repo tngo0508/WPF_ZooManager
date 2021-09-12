@@ -14,13 +14,13 @@
         <ListBox x:Name="listAllAnimals" HorizontalAlignment="Left" Height="242" Margin="395,103,0,0" VerticalAlignment="Top" Width="100" SelectionChanged="listAssociatedAnimal_SelectionChanged" RenderTransformOrigin="1.802,0.477"/>
         <Button Content="Delete Zoo" HorizontalAlignment="Left" Margin="36,283,0,0" VerticalAlignment="Top" Width="100" Click="DeleteZoo_Click"/>
         <Button Content="Remove Animal" HorizontalAlignment="Left" Margin="213,283,0,0" VerticalAlignment="Top" Width="99"/>
-        <Button Content="Add Zoo" HorizontalAlignment="Left" Margin="36,326,0,0" VerticalAlignment="Top" Width="100"/>
-        <Button Content="Add Animal" HorizontalAlignment="Left" Margin="213,326,0,0" VerticalAlignment="Top" Width="100"/>
+        <Button Content="Add Zoo" HorizontalAlignment="Left" Margin="36,326,0,0" VerticalAlignment="Top" Width="100" Click="AddZoo_Click"/>
+        <Button Content="Add Animal" HorizontalAlignment="Left" Margin="213,326,0,0" VerticalAlignment="Top" Width="100" Click="AddAnimal_Click"/>
         <Button Content="Update Zoo" HorizontalAlignment="Left" Margin="36,364,0,0" VerticalAlignment="Top" Width="100"/>
         <Button Content="Update Animal" HorizontalAlignment="Left" Margin="213,364,0,0" VerticalAlignment="Top" Width="100"/>
-        <Button Content="Delete Animal" HorizontalAlignment="Left" Margin="395,364,0,0" VerticalAlignment="Top" Width="100"/>
-        <Button Content="Add Animal to Zoo" HorizontalAlignment="Left" Margin="378,73,0,0" VerticalAlignment="Top" Width="117"/>
-        <TextBox HorizontalAlignment="Left" Height="23" Margin="36,303,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="276" RenderTransformOrigin="-0.923,0.513"/>
+        <Button Content="Delete Animal" HorizontalAlignment="Left" Margin="395,364,0,0" VerticalAlignment="Top" Width="100" Click="DeleteAnimal_Click"/>
+        <Button Content="Add Animal to Zoo" HorizontalAlignment="Left" Margin="378,73,0,0" VerticalAlignment="Top" Width="117" Click="AddAnimalToZoo_Click"/>
+        <TextBox Name="MyTextBox"  HorizontalAlignment="Left" Height="23" Margin="36,303,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="276" RenderTransformOrigin="-0.923,0.513"/>
 
     </Grid>
 </Window>
